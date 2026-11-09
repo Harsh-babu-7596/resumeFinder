@@ -1,13 +1,8 @@
-# EmployeeKHOJO.ai — Intent-Aware Hybrid Retrieval System
-
-> **Team BackPropBandits** · Built for the *An Intent‑Aware and Explainable Hybrid Retrieval System* problem statement
-> 🏆 **1st Place — Problem Statement Track**
-
----
+# ResumeFinder.ai — Intent-Aware Hybrid Retrieval System
 
 ## What Is This?
 
-EmployeeKHOJO.ai is an end-to-end intelligent search and retrieval system built for HR shortlisting candidates. Given a natural-language recruiter query like *"senior Python developer fintech 5 years no Java"*, the system identifies intent, expands the query, retrieves relevant candidates through multiple complementary signals, re-ranks them intelligently, and explains every result in plain English — all in a single pipeline.
+resumeFinder is an end-to-end intelligent search and retrieval system built for HR shortlisting candidates. Given a natural-language recruiter query like *"senior Python developer fintech 5 years no Java"*, the system identifies intent, expands the query, retrieves relevant candidates through multiple complementary signals, re-ranks them intelligently, and explains every result in plain English — all in a single pipeline.
 
 ---
 
@@ -64,7 +59,7 @@ The pipeline has five sequential stages, with hybrid and KG retrieval running in
                     ⑤ Explainability (LLM narration)
                                  │
                                  ▼
-                          EmployeeKHOJO.ai Search UI
+                          resumeFinder.ai Search UI
 ```
 
 ---
@@ -137,7 +132,7 @@ Each candidate's retrieval signals (BM25 raw score, semantic cosine, RRF rank, K
 
 ### Frontend (`frontend/`)
 
-A React 18 single-page app (`EmployeeKHOJO.aiSearch.jsx`) loaded via Babel standalone — no bundler required. Features a dark-mode search interface with animated candidate cards showing score bars, tabbed explanations, and KG-derived signal breakdowns. Hits `GET /search?q=...` and falls back to demo data if the backend is unavailable.
+A React 18 single-page app (`resumeFinder.aiSearch.jsx`) loaded via Babel standalone — no bundler required. Features a dark-mode search interface with animated candidate cards showing score bars, tabbed explanations, and KG-derived signal breakdowns. Hits `GET /search?q=...` and falls back to demo data if the backend is unavailable.
 
 ---
 
@@ -154,8 +149,8 @@ A React 18 single-page app (`EmployeeKHOJO.aiSearch.jsx`) loaded via Babel stand
 ### 1. Clone and install dependencies
 
 ```bash
-git clone https://github.com/Aryannjainnn/EmployeeKHOJO.ai.git
-cd path/to/EmployeeKHOJO.ai
+git clone https://github.com/Aryannjainnn/resumeFinder.git
+cd path/to/resumeFinder
 pip install -r requirements.txt
 ```
 
@@ -208,7 +203,7 @@ python main.py
 # Serves at http://localhost:8000
 ```
 
-The EmployeeKHOJO.ai search UI is available at `http://localhost:8000`. The API endpoints are:
+The resumeFinder search UI is available at `http://localhost:8000`. The API endpoints are:
 
 | Endpoint | Description |
 |---|---|
@@ -295,7 +290,7 @@ These results confirm that fusing lexical (BM25), semantic (dense/FAISS), and re
 │   └── watch_index.py              # File watcher for BM25/FAISS auto-update
 ├── frontend/
 │   ├── index.html                  # Shell HTML (loads React via Babel)
-│   └── EmployeeKHOJO.aiSearch.jsx             # Full search UI component
+│   └── resumeFinder.aiSearch.jsx             # Full search UI component
 ├── data/                           # Index artifacts (gitignored)
 │   ├── profiles.csv
 │   ├── bm25.pkl
